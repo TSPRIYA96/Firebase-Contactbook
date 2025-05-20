@@ -1,0 +1,54 @@
+To deploy your Firebase Contact Book project, follow these steps:
+
+1. First, Install Firebase Tools
+If you haven't already, install the Firebase CLI globally:
+
+npm install -g firebase-tools
+
+2. Log in to Firebase:
+firebase login
+This will open a browser window for authentication.
+
+3. Initialize Firebase in Your Project:
+
+firebase init
+You'll be prompted to:
+
+Select Firebase features (enable Hosting and/or Firestore if needed)
+
+Choose your Firebase project or create a new one
+
+Specify your public directory (usually dist/contact-book-fb for Angular)
+
+Configure as a single-page app (choose Yes for Angular)
+
+4. Build Your Angular Project:
+ng build --configuration production
+This creates production-ready files in the dist folder.
+
+5. Deploy to Firebase:
+firebase deploy
+Or deploy only hosting:
+firebase deploy --only hosting
+
+Expected Output
+=== Deploying to 'your-project-id'...
+
+i  deploying hosting
+i  hosting: preparing dist/contact-book-fb directory for upload...
+✔  hosting: files uploaded successfully
+✔  hosting: deploy complete!
+
+✔  Deploy complete!
+
+Project Console: https://console.firebase.google.com/project/your-project-id/overview
+Hosting URL: https://your-project-id.web.app
+
+
+
+Troubleshooting
+"Firebase command not found" → Reinstall Firebase CLI (npm install -g firebase-tools)
+
+Deployment errors → Check firebase.json configuration
+
+404 errors after deploy → Ensure your public directory in firebase.json points to the correct build folder
